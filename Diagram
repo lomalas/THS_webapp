@@ -1,0 +1,36 @@
+                ┌──────────────────────────────┐
+                │        User (Therapist)      │
+                │   (Browser - HTML Forms)     │
+                └──────────────┬───────────────┘
+                               │ HTTPS
+                               ▼
+                ┌──────────────────────────────┐
+                │      Cloud Run (Backend)     │
+                │  - REST API (Flask/FastAPI)  │
+                │  - Verifies Auth Token       │
+                │  - Handles Form Submissions  │
+                └──────────────┬───────────────┘
+                               │ SQL Queries
+                               ▼
+                ┌──────────────────────────────┐
+                │         Cloud SQL            │
+                │     (PostgreSQL DB)          │
+                │  - Therapists               │
+                │  - Patients                 │
+                │  - Notes (append-only)      │
+                │  - Symptoms (append-only)   │
+                │  - Conditions               │
+                └──────────────┬───────────────┘
+                               │ Event Publish
+                               ▼
+                ┌──────────────────────────────┐
+                │          Pub/Sub             │
+                │   "patient-updates" topic    │
+                └──────────────┬───────────────┘
+                               ▼
+                ┌──────────────────────────────┐
+                │      Cloud Function          │
+                │  - Logs activity             │
+                │  - (Optional) encrypt fields │
+                │  - Audit trail               │
+                └──────────────────────────────┘
