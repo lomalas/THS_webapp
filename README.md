@@ -44,6 +44,8 @@ Important note: I intended to make the project compliant with HIPPA guidelines f
 # Cost Breakdown
 
 ## Estimated Monthly Cost
+
+| Service | Estimated Cost |
 |---|---|
 | Service | Estimated Cost |
 | Cloud Run	| $0 - $5 |
