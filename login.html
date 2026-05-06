@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Therapist Login</title>
+</head>
+
+<body>
+    <h1>PT App Login</h1>
+
+    <input id="email" placeholder="Email"><br><br>
+    <input id="password" type="password" placeholder="Password"><br><br>
+
+    <button onclick="login()">Login</button>
+    <button onclick="signUp()">Sign Up</button>
+
+    <p id="status"></p>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAv862IoH3YCev5gSENEM8qU5wOYvqriU8",
+            authDomain: "cloud-final-495319.firebaseapp.com",
+            projectId: "cloud-final-495319",
+            storageBucket: "cloud-final-495319.firebasestorage.app",
+            messagingSenderId: "313562694329",
+            appId: "1:313562694329:web:84ae82813d64d59ecf5168"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        async function login() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const userCredential =
+                    await auth.signInWithEmailAndPassword(email, password);
+
+                const token = await userCredential.user.getIdToken(true);
+                document.cookie = `token=${token}; path=/`;
+
+                document.cookie = `token=${token}; path=/`;
+
+                document.getElementById("status").innerText =
+                    "Login successful";
+
+                window.location.href = "/setup";
+
+            } catch (err) {
+                document.getElementById("status").innerText =
+                    "Login failed: " + err.message;
+            }
+        }
+
+        async function signUp() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const userCredential =
+                    await auth.createUserWithEmailAndPassword(email, password);
+
+                const token = await userCredential.user.getIdToken(true);
+                document.cookie = `token=${token}; path=/`;     
+
+                document.cookie = `token=${token}; path=/`;
+
+                window.location.href = "/setup";
+
+            } catch (err) {
+                document.getElementById("status").innerText =
+                    "Signup failed: " + err.message;
+            }
+        }
+    </script>
+</body>
+</html>
