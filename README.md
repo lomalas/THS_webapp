@@ -8,6 +8,8 @@ The system was designed using a distributed cloud architecture on Google Cloud P
 
 This architecture improves scalability, modularity, reliability, and fault isolation while demonstrating modern cloud-native design principles.
 
+##Important note: I intended to make the project compliant with HIPPA guidelines for storing medical infromation but it is outside my realm of knolledge and the scope of this project. 
+
 ---
 
 # Application Features
