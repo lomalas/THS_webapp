@@ -44,12 +44,13 @@ Important note: I intended to make the project compliant with HIPPA guidelines f
 # Cost Breakdown
 
 ## Estimated Monthly Cost
-
-|Cloud Run	|$0 - $5|
-|Cloud SQL PostgreSQL	|$7 - $15|
-|Pub/Sub	|Less than $1|
-|Cloud Functions	|Less than $1|
-|Firebase Authentication	|Free Tier|
+|---|---|
+| Service | Estimated Cost |
+| Cloud Run	| $0 - $5 |
+| Cloud SQL PostgreSQL | $7 - $15 |
+| Pub/Sub	| Less than $1 |
+| Cloud Functions	| Less than $1 |
+| Firebase Authentication	| Free Tier |
 
 ---
 
