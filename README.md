@@ -53,6 +53,8 @@ Important note: I intended to make the project compliant with HIPPA guidelines f
 | Cloud Functions	| Less than $1 |
 | Firebase Authentication	| Free Tier |
 
+Total cost: $2 - $13 monthly
+
 ---
 
 # System Architecture Diagram
