@@ -23,7 +23,6 @@ Important note: I intended to make the project compliant with HIPPA guidelines f
 - Persistent PostgreSQL storage
 - Event-driven processing using Pub/Sub
 - Background Cloud Function worker
-- High pain-level alert processing
 
 ---
 
